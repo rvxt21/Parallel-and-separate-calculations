@@ -18,9 +18,6 @@ class Matrix:
         self.columns = columns
         self.matrix = [[0 for _ in range(columns)] for _ in range(rows)]
 
-
-
-
     def fill_the_matrix_with_input(self):
         """
         Заповнення матриці вводом чисел.
@@ -29,7 +26,6 @@ class Matrix:
             for j in range(len(self.matrix[0])):
                 self.matrix[i][j] = int(input(f"Введіть елемент матриці "
                                          f"({i+1}, {j+1}): "))
-
 
     def fill_the_matrix(self, custom_random: CustomRandomGenerator):
         """
@@ -43,7 +39,6 @@ class Matrix:
         except Exception as e:
             print(f'Сталась помилка при заповненні матриць: {e}')
 
-
     def print_matrix(self):
         """
         Друкуємо матрицю на екран
@@ -54,7 +49,8 @@ class Matrix:
     @staticmethod
     def add_matrices(matrix1: 'Matrix', matrix2: 'Matrix') -> 'Matrix':
         try:
-            if matrix1.rows != matrix2.rows or matrix1.columns != matrix2.columns:
+            if matrix1.rows != matrix2.rows or \
+                    matrix1.columns != matrix2.columns:
                 raise ValueError("Матриці мають бути однакового розміру!")
 
             result_matrix = Matrix(matrix1.rows, matrix1.columns)
